@@ -1,7 +1,10 @@
 version: '2'
 services:
   tws:
+    container_name: industrialninja/ibg_docker_tws
+    tag: latest
     build: .
+    env_file: .env
     ports:
       - "4003:4003"
       - "5901:5900"
@@ -20,8 +23,6 @@ services:
       - LOG_PATH=/opt/IBController/Logs
       - JAVA_PATH=/opt/i4j_jres/1.8.0_152/bin # JRE is bundled starting with TWS 952 
       - TRADING_MODE=paper # either paper or live
-      - TWSUSERID=fdemo # IB account
-      - TWSPASSWORD=demouser # IB account password
       - FIXUSERID=
       - FIXPASSWORD=
       - APP=GATEWAY
