@@ -1,8 +1,7 @@
 version: '2'
 services:
   tws:
-    container_name: industrialninja/ibg_docker_tws
-    tag: latest
+    container_name: ibg_docker
     build: .
     env_file: .env
     ports:
